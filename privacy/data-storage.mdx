@@ -1,0 +1,91 @@
+---
+title: "How LUCI Stores and Protects Your Data"
+sidebarTitle: "Data Storage"
+description: "Learn what data LUCI stores, how long it's kept, where it lives, and how you can export or permanently delete everything at any time."
+---
+
+Your data belongs to you — not to LUCI, not to advertisers, and not to anyone else. This page is here because you deserve to know exactly what information LUCI holds on your behalf, why it's needed, how long it stays, and what you can do with it at any moment. There are no surprises here, just honest answers written in plain language.
+
+<Note>
+  LUCI does not sell your data to third parties — ever. Your conversations, notes, preferences, and personal details are used solely to power your experience and nothing else.
+</Note>
+
+## What LUCI Stores
+
+Different types of content are handled differently depending on how you use LUCI. Here's a clear breakdown of what gets stored and where:
+
+| Data Type | What's Stored | Default Retention | Configurable? |
+|---|---|---|---|
+| **Conversations** | Encrypted session transcripts | 90 days | Yes — see [Retention & Deletion](#retention-deletion) |
+| **Tasks & Reminders** | Task text, due dates, completion status | Until you delete them | Yes — delete individually or in bulk |
+| **Notes** | Full note content and metadata | Until you delete them | Yes — local or cloud storage |
+| **Personalization Preferences** | Language, tone, theme, habits | Tied to your account | Editable anytime in Settings |
+| **Voice History** | *Not stored* | N/A — processed in-memory | N/A |
+
+A few things worth highlighting:
+
+- **Conversations** are encrypted at rest and at transit. Each session is stored as a discrete, isolated unit — LUCI doesn't stitch your conversations together into a persistent profile without your awareness.
+- **Voice input** is processed entirely in-memory during your session and is never written to disk or sent to long-term storage. Once you close a voice session, that audio is gone.
+- **Notes** are stored locally on your device by default. They only travel to the cloud if you explicitly enable sync in your settings.
+
+## Where Your Data Lives
+
+LUCI uses **end-to-end encrypted cloud storage** for any content you choose to sync — including conversations, tasks, and cloud-enabled notes. End-to-end encryption means that data is encrypted on your device before it ever leaves it, and only you hold the keys to decrypt it.
+
+**Local-only data** — such as offline notes when cloud sync is disabled — never leaves your device at all. It lives in your device's secure storage, protected by your device's own encryption layer.
+
+For synced content, LUCI's infrastructure is hosted on servers located in the United States and the European Union, with your data stored in the region closest to you at the time of account creation. You can view and update your data region preference in **Settings → Account → Data Region**.
+
+## Retention & Deletion
+
+### Default Retention Periods
+
+- **Conversations:** 90 days from the date of each session
+- **Tasks & Reminders:** Retained indefinitely until you delete them
+- **Notes:** Retained indefinitely until you delete them
+- **Personalization Preferences:** Retained for the lifetime of your account
+
+### Adjusting Conversation History
+
+If 90 days feels too long — or not long enough — you can adjust the retention window for your conversation history at any time:
+
+1. Open **Settings**
+2. Tap **Privacy**
+3. Tap **History**
+4. Choose your preferred retention period: 7 days, 30 days, 90 days, 1 year, or Keep Forever
+
+Changes take effect immediately. Conversations older than your newly selected window are queued for deletion within 24 hours.
+
+### Deleting Your Data
+
+You have precise control over what gets deleted and when:
+
+- **Delete a single conversation:** Open the conversation, tap the menu icon (⋯), and select **Delete Conversation**.
+- **Delete all conversations:** Go to **Settings → Privacy → History → Delete All Conversations**. You'll be asked to confirm before anything is removed.
+- **Delete your entire account:** Go to **Settings → Account → Delete Account**. This permanently removes all your data from LUCI's servers.
+
+<Warning>
+  Account deletion is permanent and irreversible. Once you confirm, all your conversations, notes, tasks, preferences, and account information are erased from LUCI's systems and cannot be recovered. If you think you might return, consider exporting your data first — see the section below.
+</Warning>
+
+## Exporting Your Data
+
+You can download a full copy of everything LUCI has stored for you at any time. Here's how:
+
+1. Open **Settings**
+2. Tap **Privacy**
+3. Tap **Export My Data**
+4. Confirm your identity (you'll receive a verification prompt)
+5. Tap **Request Export** — your archive will be prepared and delivered to your registered email address within 24 hours
+
+### What's Included in Your Export
+
+Your export arrives as a **JSON archive** (`.zip` file containing structured `.json` files) with the following contents:
+
+- All conversation transcripts within your current retention window
+- All tasks and reminders (including completed ones)
+- All notes (both local and cloud-synced)
+- Your personalization preferences and settings
+- Your account profile information (name, email, region)
+
+The archive is human-readable and portable — you can open the JSON files in any text editor, import them into other tools, or simply keep them as your own backup. LUCI doesn't lock your memories inside a proprietary format.

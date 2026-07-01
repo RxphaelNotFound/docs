@@ -1,0 +1,103 @@
+---
+title: "App Permissions LUCI Requests and Why"
+sidebarTitle: "Permissions"
+description: "Understand every permission LUCI may request — microphone, notifications, location, and more — what each is used for and how to revoke access at any time."
+---
+
+LUCI only asks for access to the parts of your device that it genuinely needs to serve you — and it never asks for more than that. Every permission on this page has a specific, honest purpose, and you stay in full control of what you grant. You can say no to any of them, revoke them at any time, and LUCI will continue to work gracefully within whatever boundaries feel right to you.
+
+<Note>
+  LUCI will never request a permission not listed on this page without first updating this documentation and notifying you in-app. If you see a prompt for a permission that isn't described here, please contact our support team at [support@luci.app](mailto:support@luci.app).
+</Note>
+
+## Permissions Overview
+
+| Permission | Used For | Required or Optional | How to Revoke |
+|---|---|---|---|
+| **Microphone** | Voice interaction — speaking to LUCI directly | Optional | Device Settings → LUCI → Microphone |
+| **Notifications** | Reminders, task alerts, and gentle check-ins | Optional (recommended) | App Settings or Device Settings → LUCI → Notifications |
+| **Location** | Location-based reminders (e.g., "remind me when I get home") | Optional | Device Settings → LUCI → Location |
+| **Background App Refresh** | Syncing notes and tasks while the app isn't open | Optional | Device Settings → LUCI → Background App Refresh |
+| **Contacts** *(coming soon)* | Suggesting people when you create a shared reminder | Optional | Device Settings → LUCI → Contacts |
+
+All permissions are optional except where your specific use case requires them. LUCI's core features — conversations, notes, tasks, and personalization — are available without granting any system permissions at all.
+
+## Granting Permissions
+
+LUCI follows a **just-in-time** model for requesting permissions. This means LUCI never asks for access to something at install time or on first launch just in case it might need it later. Instead, a permission prompt appears only at the moment you activate the feature that requires it.
+
+Here's how that plays out in practice:
+
+- **Microphone** — The first time you tap the **Voice** button to speak to LUCI, your device will display a permission prompt explaining that LUCI is requesting microphone access. You can allow or deny it right there.
+- **Notifications** — When you set your first reminder or task with a due time, LUCI will ask for notification permission so it can alert you at the right moment.
+- **Location** — When you create a location-based reminder for the first time (e.g., "remind me when I arrive at the gym"), LUCI will request location access.
+- **Background App Refresh** — If you enable cloud sync for notes or tasks and haven't yet granted background refresh, LUCI will explain why it helps and ask for permission.
+
+Each permission prompt includes a plain-language explanation of why LUCI needs access and what it will do with it. You'll never see a prompt without context.
+
+## Revoking Permissions
+
+You can revoke any permission at any time through your device's settings. Changes take effect immediately — LUCI checks permission status each time a relevant feature is used.
+
+<Tabs>
+  <Tab title="iOS">
+    **To revoke a single permission on iOS:**
+
+    1. Open the **Settings** app on your iPhone or iPad
+    2. Scroll down and tap **LUCI**
+    3. You'll see a list of all permissions LUCI has been granted
+    4. Tap any permission to toggle it off
+
+    **To revoke notification settings specifically:**
+
+    1. Open **Settings**
+    2. Tap **Notifications**
+    3. Scroll to and tap **LUCI**
+    4. Toggle **Allow Notifications** off, or customize which alert types are allowed
+
+    **To revoke location access:**
+
+    1. Open **Settings**
+    2. Tap **Privacy & Security → Location Services**
+    3. Tap **LUCI**
+    4. Select **Never** to remove location access entirely, or choose **While Using** to restrict it to foreground use only
+  </Tab>
+  <Tab title="Android">
+    **To revoke a single permission on Android:**
+
+    1. Open the **Settings** app on your device
+    2. Tap **Apps** (or **Application Manager**, depending on your device)
+    3. Find and tap **LUCI**
+    4. Tap **Permissions**
+    5. Tap any permission and select **Deny**
+
+    **To revoke notification settings specifically:**
+
+    1. Open **Settings**
+    2. Tap **Apps → LUCI**
+    3. Tap **Notifications**
+    4. Toggle **All LUCI notifications** off, or manage individual notification categories
+
+    **To revoke location access:**
+
+    1. Open **Settings**
+    2. Tap **Apps → LUCI → Permissions → Location**
+    3. Select **Deny** to remove access, or **Allow only while using the app** to restrict background location
+
+    *Note: Navigation paths may vary slightly depending on your Android version and device manufacturer.*
+  </Tab>
+</Tabs>
+
+## What Happens Without a Permission
+
+LUCI is built to degrade gracefully — revoking a permission disables only the feature that depends on it, and nothing else changes.
+
+| Permission Revoked | What's Affected | What Still Works |
+|---|---|---|
+| **Microphone** | Voice mode is unavailable | Everything else — conversations via text, notes, tasks, all core features |
+| **Notifications** | No push alerts or lock screen reminders | Reminders still appear in the **Tasks** tab inside the app; you can check them manually |
+| **Location** | Location-based reminders can't be created or triggered | All other reminder types (time-based) work normally |
+| **Background App Refresh** | Notes and tasks sync only when the app is open | Data is fully intact; sync just happens when you open LUCI rather than in the background |
+| **Contacts** *(future)* | People suggestions won't appear when creating reminders | You can still create reminders manually by typing a name |
+
+LUCI won't prompt you repeatedly to re-grant a permission you've denied. If a feature requires a permission you haven't granted, you'll see a calm, informational banner explaining what's needed and how to enable it — but only when you actively try to use that feature.

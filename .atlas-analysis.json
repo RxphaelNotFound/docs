@@ -1,13 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "projectType": "saas",
+  "projectName": "LUCI",
+  "projectDescription": "LUCI (Live User Companionship Interface) is a calm, human-centered AI companion for daily support, learning, creativity, and productivity in one distraction-free experience.",
   "theme": "almond",
-  "name": "LUCI",
-  "colors": {
-    "primary": "#ef7025",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
-  },
-  "favicon": "/favicon.svg",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
   "navigation": {
     "tabs": [
       {
@@ -58,22 +56,24 @@
       }
     ]
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@luci.app"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Get LUCI",
-      "href": "https://luci.app"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/luciapp"
-    }
-  }
+  "keyFeatures": [
+    "Intelligent conversational AI for learning, planning, and emotional support",
+    "Adaptive personalization that learns user habits without feeling intrusive",
+    "Integrated productivity system with tasks, reminders, schedules, and focus modes",
+    "Creative assistant for writing, brainstorming, and idea generation",
+    "Optional voice interaction with a calm, natural tone",
+    "Offline-safe notes storage",
+    "Focus Sanctuary mode that removes all non-essential UI elements",
+    "Warm glassmorphism-inspired minimalistic design with smooth transitions"
+  ],
+  "publicApiSurface": [
+    "Conversational AI chat interface",
+    "Task & reminder management",
+    "Focus Sanctuary mode toggle",
+    "Voice interaction on/off",
+    "Adaptive personalization settings",
+    "Creative writing & brainstorming prompts",
+    "Offline notes sync",
+    "User preferences & account settings"
+  ]
 }

@@ -1,0 +1,91 @@
+---
+title: "Using LUCI Offline: Notes, Tasks, and Local Storage"
+sidebarTitle: "Offline Mode"
+description: "LUCI keeps your notes and tasks available even without an internet connection. Learn which features work offline and how local sync works when you reconnect."
+---
+
+A quiet moment on a flight, a walk somewhere without signal, a retreat where you've intentionally stepped away from the internet — LUCI is designed to be there for those times too. Your notes, tasks, and saved thoughts live on your device, not just in the cloud, so they're always within reach no matter what your connectivity looks like. You don't need a perfect connection to think clearly, and neither does LUCI.
+
+<Note>
+  Offline mode is fully supported on **iOS** and **Android**. The LUCI web app has limited offline support — saved conversations and preferences are accessible, but note editing and task management require an active connection in the browser.
+</Note>
+
+## What Works Offline
+
+Here's a clear picture of what you can do without an internet connection:
+
+| Feature | Offline Available? | Details |
+|---|---|---|
+| 📝 Notes (read & write) | ✅ Yes | Create, edit, and organize notes freely |
+| ✅ Tasks & to-do lists | ✅ Yes | View tasks and mark them complete |
+| 💬 Saved conversations | ✅ Read-only | Browse past conversations; cannot continue them |
+| ⚙️ Preferences & settings | ✅ Yes | Adjust your settings anytime |
+| 🤖 AI conversations | ❌ No | Requires an active internet connection |
+| 🎙️ Voice interaction | ❌ No | Requires an active internet connection |
+| 🔄 Real-time sync | ❌ No | Changes queue locally and sync when you reconnect |
+
+The features that don't work offline — AI conversations and voice — require a live connection because they involve real-time language processing on LUCI's servers. Everything else is designed to work independently of that.
+
+## Offline Notes
+
+Notes are LUCI's most fully offline-capable feature. You can create, edit, organize, and review your notes without any connection at all.
+
+### Writing Notes Offline
+
+Tap the **Notes** tab at the bottom of the screen to access your notes library. From there:
+
+- Tap the **+** button to create a new note
+- Tap any existing note to open and edit it
+- Use the toolbar at the bottom of the editor to format your content
+
+**Markdown is fully supported** in LUCI notes. You can use headings (`#`, `##`), bold (`**text**`), italics (`*text*`), bullet lists, numbered lists, checkboxes (`- [ ]`), and code blocks. Your formatting renders live as you type, so what you see is what you'll get when you revisit the note.
+
+### How Changes Queue for Sync
+
+When you edit a note offline, LUCI saves your changes immediately to local storage on your device. Each change is also added to a **sync queue** — a lightweight log that tracks what needs to be sent to the cloud once you're back online. You don't have to do anything to trigger this; it happens automatically in the background the moment connectivity returns.
+
+<Tip>
+  During an AI conversation, you can tap the **Save to Notes** option on any message or response to instantly capture it as a note. Those saved notes are available offline immediately — a great way to hold onto an insight or reflection from a session so you can revisit it later, even without a connection.
+</Tip>
+
+## Reconnecting & Syncing
+
+When your device reconnects to the internet, LUCI gets back in sync quietly and automatically. Here's what happens:
+
+### Automatic Background Sync
+
+As soon as connectivity is detected, LUCI begins syncing any queued changes in the background. You don't need to open the app or tap anything — if the app is running (even in the background), sync happens on its own.
+
+### Conflict Resolution
+
+If you edited a note on two different devices while one or both were offline, LUCI uses a **newest-edit-wins** approach to resolve the conflict. The version with the most recent timestamp is kept, and the older version is discarded. In most everyday situations this works seamlessly. If you're working on something important across multiple devices, it's worth finishing on one device before editing on another.
+
+### Sync Status Indicator
+
+You can always check the current sync state by looking at the small **sync icon** in the top right corner of the Notes tab:
+
+- **Cloud with checkmark** — everything is synced and up to date
+- **Spinning arrows** — sync is in progress
+- **Cloud with slash** — offline; changes are queued locally
+- **Exclamation mark** — a sync error occurred; tap to see details and retry
+
+## Enabling Local-Only Mode
+
+If you'd prefer that your notes never leave your device at all, LUCI supports a **Local Only** storage mode. In this mode, no note content is ever uploaded to LUCI's cloud — it lives entirely on your device, full stop.
+
+To enable Local Only mode:
+
+1. Open **Settings**
+2. Tap **Privacy**
+3. Tap **Storage**
+4. Select **Local Only**
+
+### Trade-Offs to Know
+
+Local Only mode is a meaningful privacy choice, but it does come with a few limitations worth understanding before you switch:
+
+- **No multi-device sync.** Notes created on your phone won't appear on your tablet, and vice versa.
+- **No cloud backup.** If you lose your device or uninstall the app, those notes are gone. Consider exporting them periodically as a personal backup (see [Exporting Your Data](/privacy/data-storage#exporting-your-data)).
+- **Account deletion clears local storage.** If you delete your LUCI account, locally stored notes are also removed from the device during the next app launch.
+
+Switching back to cloud sync at any time will upload your local notes to your encrypted cloud storage automatically.

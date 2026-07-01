@@ -1,0 +1,192 @@
+---
+title: "Troubleshoot Common LUCI Issues"
+sidebarTitle: "Troubleshooting"
+description: "Fix the most common LUCI problems: sync not working, voice mode unavailable, notifications not arriving, slow responses, and account access issues."
+---
+
+Most issues you'll run into with LUCI have a simple fix — and this page walks you through them clearly. We've organized everything by topic so you can jump straight to what's relevant. Work through the steps in order, and you'll usually be back up and running in just a minute or two. If something here doesn't resolve your issue, our support team is standing by at [support@luci.app](mailto:support@luci.app).
+
+---
+
+## Sync & Connectivity
+
+<AccordionGroup>
+  <Accordion title="Notes or tasks aren't syncing across my devices">
+    If your notes or tasks look different on one device than another, try these steps in order:
+
+    1. **Check your internet connection.** Sync requires an active connection on both devices. Make sure you're connected to Wi-Fi or cellular data.
+    2. **Force-refresh the app.** On the Notes or Tasks screen, pull down gently from the top to trigger a manual sync. Wait a few seconds for the refresh to complete.
+    3. **Check your storage setting.** Go to **Settings → Storage & Sync** and make sure the setting is not set to **Local Only**. If it is, your content is being saved only to that device and won't sync. Switch it to **Sync with Cloud** to re-enable cross-device syncing.
+    4. **Sign out and back in.** This refreshes your sync session. Go to **Settings → Account → Sign Out**, then sign back in with your credentials.
+
+    If you've recently changed devices or reinstalled the app, allow up to 60 seconds after signing in for your content to finish downloading.
+  </Accordion>
+
+  <Accordion title="My conversation history is missing on a new device">
+    Your conversation history is tied to your LUCI account, not your device. To access it on a new device:
+
+    1. **Make sure you're signed into the same account.** Open **Settings → Account** and confirm the email address shown is the one you've always used. If it's different, sign out and sign in with the correct account.
+    2. **Wait up to 60 seconds.** After signing in, history syncs automatically within about a minute. Give it a moment before assuming something is wrong.
+    3. **Check your plan.** Conversation history older than 30 days is a **LUCI Plus** feature. If you're on the free tier, you'll see only your most recent 30 days of conversations.
+
+    If your history still doesn't appear after following these steps, contact [support@luci.app](mailto:support@luci.app) and we'll look into it right away.
+  </Accordion>
+
+  <Accordion title='"Unable to connect" error'>
+    This error means LUCI couldn't reach our servers. Here's how to resolve it:
+
+    1. **Check your internet connection.** Try opening a webpage or another app to confirm you're online.
+    2. **Force-close and reopen LUCI.** On iOS, swipe up from the bottom and swipe away LUCI. On Android, use the recent apps button and close LUCI. Then reopen it.
+    3. **Wait a few minutes and try again.** Occasionally, brief service interruptions can cause this error. They typically resolve within a few minutes.
+    4. **Check the LUCI status page.** Visit [luci.app/status](https://luci.app/status) to see if there's a known service issue. If there is, we'll post updates there as we work on it.
+
+    If the error persists on a working internet connection and there's no known outage, please reach out to [support@luci.app](mailto:support@luci.app).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Voice Interaction
+
+<AccordionGroup>
+  <Accordion title="Microphone permission was denied — how do I fix it?">
+    LUCI needs microphone access to use voice mode. If you accidentally denied permission or it got turned off, here's how to re-grant it:
+
+    **On iOS:**
+    1. Open the **Settings** app
+    2. Scroll down and tap **LUCI**
+    3. Toggle **Microphone** on
+
+    **On Android:**
+    1. Open the **Settings** app
+    2. Go to **Apps → LUCI → Permissions**
+    3. Tap **Microphone** and select **Allow**
+
+    Once you've re-granted permission, return to LUCI and try voice mode again. You shouldn't need to restart the app.
+  </Accordion>
+
+  <Accordion title="LUCI isn't hearing me correctly">
+    If LUCI is misunderstanding what you say or missing words, try the following:
+
+    1. **Check that your microphone isn't physically blocked.** Make sure nothing is covering the microphone on your device — cases or covers can muffle audio significantly.
+    2. **Speak clearly and at a natural pace.** You don't need to speak loudly, but try not to trail off at the end of sentences.
+    3. **Move to a quieter environment.** Background noise — TV, music, crowds — can interfere with voice recognition. Even a small reduction in ambient noise makes a big difference.
+    4. **Check for accessibility settings that may interfere.** On iOS, go to **Settings → Accessibility → Audio/Visual** and review any settings that could affect microphone input. On Android, check **Settings → Accessibility** for similar options.
+    5. **Restart LUCI.** If the issue started suddenly, closing and reopening the app often resolves it.
+  </Accordion>
+
+  <Accordion title='"Hey LUCI" Wake Word Not Activating'>
+    If the wake word isn't triggering LUCI when you expect it to, work through these checks:
+
+    1. **Make sure the wake word is enabled.** Open **Settings → Voice → Wake Word** and confirm the toggle is turned on.
+    2. **Check Background App Refresh.** The wake word requires LUCI to listen in the background, which needs Background App Refresh enabled.
+       - **iOS:** Go to **Settings → General → Background App Refresh** and make sure LUCI is toggled on.
+       - **Android:** Go to **Settings → Apps → LUCI → Battery** and set it to **Unrestricted** or **Don't restrict**.
+    3. **Re-train the wake word.** If detection feels inconsistent, go to **Settings → Voice → Wake Word → Re-train** and record the phrase again. This tunes recognition to your voice specifically.
+    4. **Check microphone permissions** are fully granted (see above).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Notifications
+
+<AccordionGroup>
+  <Accordion title="My reminders aren't arriving as notifications">
+    If LUCI reminders aren't showing up at the right time, check these three things:
+
+    1. **Notification permission.** LUCI needs permission to send notifications.
+       - **iOS:** Go to **Settings → LUCI → Notifications** and make sure **Allow Notifications** is on.
+       - **Android:** Go to **Settings → Apps → LUCI → Notifications** and ensure they're enabled.
+    2. **LUCI's Quiet Hours setting.** If Quiet Hours are active, LUCI holds notifications until the window ends. Check this in **Settings → Notifications → Quiet Hours** and adjust or disable the schedule if needed.
+    3. **System Do Not Disturb.** Your device's Do Not Disturb or Focus mode can block all notifications from all apps, including LUCI. Check your device's quick settings or notification panel to confirm DND isn't active, or add LUCI as an exception.
+
+    If reminders are showing in LUCI's Reminders tab but not arriving as alerts, the issue is almost always one of the three above.
+  </Accordion>
+
+  <Accordion title="I'm getting too many notifications from LUCI">
+    LUCI lets you fine-tune notifications on a per-feature basis so you get only what's useful to you. To adjust:
+
+    1. Go to **Settings → Notifications**
+    2. You'll see toggles for each notification type: **Reminders**, **Daily Check-ins**, **Focus Sanctuary prompts**, **Journal prompts**, and **Account & billing alerts**
+    3. Turn off any categories you don't want, or tap into each one to set a preferred frequency
+
+    You can also set **Quiet Hours** here if you'd like LUCI to stay silent during certain times of day — like overnight or during work hours — without turning off notifications entirely.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Performance
+
+<AccordionGroup>
+  <Accordion title="LUCI's AI responses feel slow">
+    Slow responses from LUCI are almost always caused by a network issue rather than anything on our end. Here's how to speed things up:
+
+    1. **Try switching your connection.** If you're on Wi-Fi, switch to cellular data (or vice versa). A network change often resolves latency immediately.
+    2. **Check your signal strength.** A weak Wi-Fi or cellular signal means slower response times. Moving closer to your router or to an area with better reception usually helps.
+    3. **Check the LUCI status page.** If there's unusually high demand or an infrastructure issue, it will be noted at [luci.app/status](https://luci.app/status).
+    4. **Restart the app.** If responses have been sluggish throughout a session, closing and reopening LUCI gives you a fresh connection.
+
+    During peak hours, brief slowdowns can occasionally occur. They typically resolve within a few minutes.
+  </Accordion>
+
+  <Accordion title="The LUCI app is crashing or freezing">
+    If LUCI closes unexpectedly or becomes unresponsive, try these steps:
+
+    1. **Update to the latest version.** Most crash issues are fixed in updates. Check the App Store or Google Play for any available updates and install them.
+    2. **Restart your device.** A full device restart clears temporary issues that can cause app instability.
+    3. **Clear the app cache.**
+       - **iOS:** Go to **Settings → General → iPhone Storage → LUCI → Offload App**. This clears cached data without deleting your account or content. Reinstall from the App Store afterward.
+       - **Android:** Go to **Settings → Apps → LUCI → Storage → Clear Cache**. This is safe to do and won't affect your data.
+    4. **Reinstall LUCI.** If the issue persists after all of the above, uninstall and reinstall the app. Your data is stored in the cloud and will sync back automatically once you sign in.
+
+    If LUCI continues to crash after reinstalling, please send a bug report to [support@luci.app](mailto:support@luci.app) with your device model and OS version so our team can investigate.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Account
+
+<AccordionGroup>
+  <Accordion title="I forgot my password">
+    Resetting your password is quick and easy:
+
+    1. Open LUCI and tap **Sign In**
+    2. Tap **Forgot password?** below the password field
+    3. Enter the email address associated with your account
+    4. Check your inbox — a password reset link will arrive within **2 minutes**
+    5. Tap the link in the email and follow the prompts to create a new password
+
+    If the email doesn't arrive within a few minutes, check your spam or junk folder. If you still don't see it, make sure you're entering the right email address, or contact [support@luci.app](mailto:support@luci.app) for help.
+  </Accordion>
+
+  <Accordion title="I'm locked out of my account">
+    If you've tried resetting your password and still can't get in — or if you think your account may have been compromised — please contact our support team directly:
+
+    📧 [support@luci.app](mailto:support@luci.app)
+
+    Include your account email address and a brief description of the issue. Our team typically responds within a few hours and will help you regain access safely. If there's any sign of unauthorized access, we'll walk you through securing your account.
+  </Accordion>
+
+  <Accordion title="My LUCI Plus subscription isn't activating">
+    If you completed a purchase but LUCI Plus features haven't turned on, the most common fix is to restore your purchases:
+
+    1. Open **Settings → Account → Restore Purchases**
+    2. Wait a moment while LUCI verifies your purchase with the App Store or Google Play
+    3. LUCI Plus features should activate automatically once the verification completes
+
+    If restoring purchases doesn't work, try signing out and back into your LUCI account. If you're still seeing the free tier after that, contact [support@luci.app](mailto:support@luci.app) with your purchase receipt and we'll sort it out for you.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+<Note>
+  Not finding a fix here? Our support team covers every issue — big or small. Email us at [support@luci.app](mailto:support@luci.app) and we'll get back to you as quickly as we can.
+</Note>
+
+<Card title="Check the FAQ" icon="circle-question" href="/help/faq">
+  Browse answers to the most common questions about LUCI's features, privacy, plans, and more.
+</Card>
